@@ -12,7 +12,7 @@ public class DigitSum {
         // Should print 15 (1 + 2 + 3 + 4 + 5) once digitSum is implemented.
         System.out.println("digitSum(12345) = " + digitSum(12345));
     }
-
+    
     /**
      * Returns the sum of the decimal digits of {@code n}. Negative numbers are
      * treated by their absolute value, so {@code digitSum(-123) == 6}.
@@ -22,6 +22,16 @@ public class DigitSum {
      */
     public static int digitSum(int n) {
         // TODO: complete
-        return 0;
+        String[] digits = Integer.toString(n).split("");
+        int sum = 0;
+        int i = 0;
+        
+        while (i < digits.length){
+            if (!digits[i].equals("-")) {
+                sum += Integer.parseInt(digits[i]);
+            }
+          i++;
+        }
+        return sum;
     }
 }
